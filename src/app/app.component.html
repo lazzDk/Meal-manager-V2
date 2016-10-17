@@ -1,6 +1,17 @@
 <div>
+  <md-sidenav-layout>
   <md-toolbar color="primary">
-    <md-icon class="icon-20">pets</md-icon>
-       Meal manager
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button> 
+    <md-icon class="icon-20">event</md-icon> Meal manager
   </md-toolbar>
+  <md-sidenav #sidenav align="start" mode="over" class="app-sidenav" >
+    Sidenav 
+  <day-list></day-list>
+  </md-sidenav>
+  <div class="app-content">
+    Content
+  </div>
+</md-sidenav-layout>
 </div>

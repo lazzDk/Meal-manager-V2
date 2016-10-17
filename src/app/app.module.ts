@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { DayListComponent } from './days/day-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DayListComponent
   ],
   imports: [
     MaterialModule.forRoot(),
