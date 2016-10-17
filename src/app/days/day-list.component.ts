@@ -16,20 +16,19 @@ export class DayListComponent implements OnInit {
         id: 1,
         name: "Monday",
         dish: "Hotday",
-        image: "http://globe-views.com/dcim/dreams/hot-dog/hot-dog-06.jpg"
+        image: "hotdog.png"
       },
         {
         id: 2,
         name: "Tusday",
         dish: "Burger",
-        image: "http://globe-views.com/dcim/dreams/hot-dog/hot-dog-06.jpg"
+        image: "burger.png"
       },
         {
         id: 1,
         name: "Wednesday",
-        dish: "Hotday",
-        image: "http://globe-views.com/dcim/dreams/hot-dog/hot-dog-06.jpg"
-        
+        dish: "Cheese",
+        image: "cheese.png"
       }
       ]
    }
