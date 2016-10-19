@@ -35,7 +35,22 @@ md-sidenav-layout {
   height: 100vh;
 }
 
+
+md-sidenav a { 
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
 .app-sidenav {
   padding: 10px;
   min-width: 100px;
+}
+
+.app-content{
+  margin: 25px auto 25px auto;
+  width: 960px;
 }

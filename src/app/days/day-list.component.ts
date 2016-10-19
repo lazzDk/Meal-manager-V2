@@ -1,43 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DishDay } from '../shared/dishday';
+import { DishDayService } from './dishday.service';
+ 
 @Component({
-  moduleId: module.id,
   selector: 'day-list',
-  templateUrl: 'day-list.component.html'
+  templateUrl: 'day-list.component.html',
+  styleUrls: ['day-list.component.css']
+
 })
 export class DayListComponent implements OnInit {
-  days: Day[] = []
+  dishDays: DishDay[] 
+  constructor(private dishDayService: DishDayService) { }
 
-  constructor() { }
+  ngOnInit() { 
+    this.getDishDays();
+  }
+  
+  getDishDays(): void {
+   this.dishDayService.getDishDays().then(disdays => this.dishDays = disdays);
+  }
 
-  ngOnInit() {
-    this.days = [
-      {
-        id: 1,
-        name: "Monday",
-        dish: "Hotday",
-        image: "hotdog.png"
-      },
-        {
-        id: 2,
-        name: "Tusday",
-        dish: "Burger",
-        image: "burger.png"
-      },
-        {
-        id: 1,
-        name: "Wednesday",
-        dish: "Cheese",
-        image: "cheese.png"
-      }
-      ]
-   }
-}
-
-
-export class Day {
-  id: number;
-  name :string;
-  dish: string;
-  image: string;
 }

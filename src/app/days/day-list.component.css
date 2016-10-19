@@ -1,0 +1,23 @@
+.rotate {
+    -webkit-transform: rotate(-90deg);
+
+    -moz-transform: rotate(-90deg);
+
+    -ms-transform: rotate(-90deg);
+
+    -o-transform: rotate(-90deg);
+
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    position: relative;
+    left: 56px;
+    font-size: 15px;
+    top: 66px;
+}
+
+
+.vertical-text {
+	transform: rotate(90deg);
+	transform-origin: left top 0;
+    float: left;
+    padding-left: 11px;
+}
