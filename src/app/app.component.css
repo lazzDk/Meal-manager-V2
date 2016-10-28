@@ -1,5 +1,4 @@
 
-
 .app-icon-button {
   box-shadow: none;
   user-select: none;
@@ -16,37 +15,48 @@
   text-align: left;
   text-decoration: none;
   margin-right: 10px;
+  color: white;
 }
 
-md-sidenav {
-  width: 200px;
-}
 
 md-toolbar-row {
   justify-content: space-between;
-}
-
-
-md-sidenav { 
-  background-color: #90CAF9;
 }
 
 md-sidenav-layout {
   height: 100vh;
 }
 
+md-sidenav {
+  width: 200px;
+  background-color: #03a9f4;
+  color: white;
+}
 
+
+md-sidenav h2 {
+  padding: 10px;
+}
 md-sidenav a { 
-  padding: 5px 10px;
+  color: white;
+  padding: 10px 10px 10px 10px;
   text-decoration: none;
-  margin-top: 10px;
   display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
+  font-size: 14px;
+  text-transform: uppercase;
+  width: 90%;
+}
+
+md-sidenav a:hover { 
+  background-color: rgb(11, 125, 255);
+  opacity: 0.7;
+}
+
+md-sidenav a.active {
+  background-color: rgb(21, 101, 192);
 }
 
 .app-sidenav {
-  padding: 10px;
   min-width: 100px;
 }
 
@@ -54,3 +64,42 @@ md-sidenav a {
   margin: 25px auto 25px auto;
   width: 960px;
 }
+
+
+.side-nav-close-button {
+  position:absolute;
+  bottom: 10px;  
+  left: 10px ;
+}
+
+
+.menu {
+    margin: 0;
+}
+
+.menu,
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0;
+}
+
+.menu > li {
+    border-bottom: 1px solid;
+}
+
+.menu > li:nth-child(1) {
+    border-top: none;
+}
+
+.md-whiteframe-glow-z1 {
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084);
+}
+
+.menu li a md-icon {
+  font-size:21px;
+}
+

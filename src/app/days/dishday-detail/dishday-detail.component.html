@@ -1,3 +1,12 @@
-<p>
-  dishday-detail works!
-</p>
+<div *ngIf="dishDay">
+  <h2>{{dishDay.weekDay}}</h2>
+  <div>
+    <p>{{dishDay.mainDish}}</p>
+    <p class="side-dish-text">w. {{dishDay.sideDish}}</p>
+
+
+  </div>
+
+
+  <button md-raised-button class="md-raised md-accent" (click)="goBack()">Go back</button>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { DishDay } from '../shared/dishday';
 import { DishDayService } from './dishday.service';
@@ -11,7 +12,7 @@ import { DishDayService } from './dishday.service';
 })
 export class DayListComponent implements OnInit {
   dishDays: DishDay[] 
-  constructor(private dishDayService: DishDayService) { }
+  constructor(private dishDayService: DishDayService, private router: Router) { }
 
   ngOnInit() { 
     this.getDishDays();
@@ -19,6 +20,11 @@ export class DayListComponent implements OnInit {
   
   getDishDays(): void {
    this.dishDayService.getDishDays().then(disdays => this.dishDays = disdays);
+  }
+
+  goToDetails(id: number){
+    let link = ['/detail', id];
+    this.router.navigate(link);
   }
 
 }

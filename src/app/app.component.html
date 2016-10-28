@@ -6,21 +6,21 @@
     </button> 
     <md-icon class="icon-20">event</md-icon> Meal manager
   </md-toolbar>
-  <md-sidenav #sidenav align="start" mode="over" class="app-sidenav" layout-padding>
-    <h1>
-      sidenav
-    </h1>
-    <md-list (click)="sidenav.close()">
-      <md-list-item>
-        <a routerLink="/main" >main</a>
-      </md-list-item>
-      <md-list-item>
-        <a routerLink="/recipe">recipe</a>
-      </md-list-item>
-    </md-list>
+  <md-sidenav #sidenav align="start" mode="over" class="app-sidenav" layout-padding color="primary">
+    <h2>
+      Meal manager
+    </h2>
+    <ul class="menu" (click)="sidenav.close()">
+      <li>
+        <a routerLink="/main" routerLinkActive="active"><md-icon>home</md-icon> Main</a>
+      </li>
+       <li>
+        <a routerLink="/recipe" routerLinkActive="active"><md-icon>receipt</md-icon> Recipe</a>
+      </li>
+    </ul>
+   
 
-
-     <button md-raised-button class="md-raised md-primary" (click)="sidenav.close()">Close</button>
+     <button md-raised-button class="md-raised md-accent side-nav-close-button" (click)="sidenav.close()">Close</button>
   </md-sidenav>
   
   <md-card class="app-content"> 

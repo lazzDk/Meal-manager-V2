@@ -1,24 +1,47 @@
 import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
+
 import { DishDay } from '../shared/dishday';
 
 @Injectable()
 export class DishDayService {
-  constructor() { }
+
+  private headers = new Headers(
+    {'Access-Control-Allow-Origin': '*' });
+  private dishDayUrl = "http://localhost:65248/api/dishday";
+
+  constructor(private http: Http) {
+
+   }
+
+   private handleError(error: any): Promise<any> {
+     console.error("An error occurred", error);
+     return Promise.reject(error.message || error);
+   }
 
   getDishDays(): Promise<DishDay[]> {
-    return Promise.resolve(DISHDAYS);
+    return this.http.get(this.dishDayUrl)
+      .toPromise()
+      .then(response => response.json() as DishDay[])
+      .catch(this.handleError);
   }
 
-  getDishDay(id: number) {
-    return this.getDishDays()
-      .then(dishDays => dishDays.find(dishDay => dishDay.id === id));
+  getDishDay(id: string) {
+    console.log("id is " +id);
+    const url = `${this.dishDayUrl}/${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json() as DishDay)
+      .catch(this.handleError);
   }
 }
 
 export const DISHDAYS : DishDay[] = [
       {
         id: 1,
-        name: "Monday",
+        weekDay: "Monday",
         shortenedName: "Mon",
         mainDish: "Hotday",
         sideDish: "Tomato",
@@ -29,7 +52,7 @@ export const DISHDAYS : DishDay[] = [
       },
       {
         id: 2,
-        name: "Tuesday",
+        weekDay: "Tuesday",
         shortenedName: "Tue",
         mainDish: "Burger",
         sideDish: "Tomato",
@@ -40,7 +63,7 @@ export const DISHDAYS : DishDay[] = [
       },
       {
         id: 3,
-        name: "Wednesday",
+        weekDay: "Wednesday",
         shortenedName: "Wed",
         mainDish: "Cheese",
         sideDish: "Tomato",
@@ -51,7 +74,7 @@ export const DISHDAYS : DishDay[] = [
       },
        {
         id: 4,
-        name: "Thursday",
+        weekDay: "Thursday",
         shortenedName: "Thur",
         mainDish: "Cheese",
         sideDish: "Tomato",
@@ -62,7 +85,7 @@ export const DISHDAYS : DishDay[] = [
       },
        {
         id: 5,
-        name: "Friday",
+        weekDay: "Friday",
         shortenedName: "Fri",
         mainDish: "Cheese",
         sideDish: "Tomato",
@@ -73,7 +96,7 @@ export const DISHDAYS : DishDay[] = [
       },
        {
         id: 6,
-        name: "Saturday",
+        weekDay: "Saturday",
         shortenedName: "Sat",
         mainDish: "Cheese",
         sideDish: "Tomato",
@@ -84,7 +107,7 @@ export const DISHDAYS : DishDay[] = [
       },
        {
         id: 7,
-        name: "Sunday",
+        weekDay: "Sunday",
         shortenedName: "Sun",
         mainDish: "Cheese",
         sideDish: "Tomato",

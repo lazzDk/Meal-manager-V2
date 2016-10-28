@@ -1,11 +1,14 @@
 
-<md-list>
-  <md-list-item class="md-3-line" *ngFor="let day of dishDays">
+<md-list dense>
+  <md-list-item class="md-3-line menu-list" *ngFor="let day of dishDays" (click)="goToDetails(day.id)">
       <img md-list-avatar src="https://cdn2.iconfinder.com/data/icons/line-mix-vol-6/128/line-68-64.png" alt="..."/>
-      <h2 md-line>{{day.shortenedName | uppercase}}</h2>
-      <h3 md-line>{{day.mainDish}}</h3>
+      <div class="day-text" color="primary" md-line>{{day.weekDay | uppercase}}</div>
       <p md-line>
-        <span> No. {{day.noOfPersons}} </span>
+        <span class="main-dish-text">{{day.mainDish}}</span>
+        <span class="side-dish-text">w. {{day.sideDish}}</span>
+      </p>
+      <p md-line>
+        <span>For {{day.noOfPersons}} persons</span>
       </p>
   </md-list-item>
 </md-list>

@@ -1,6 +1,6 @@
 export class DishDay {
   id: number;
-  name :string;
+  weekDay :string;
   shortenedName :string;
   mainDish: string;
   sideDish: string;

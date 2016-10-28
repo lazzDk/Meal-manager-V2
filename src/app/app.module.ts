@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { DayListComponent } from './days/day-list.component';
@@ -26,25 +27,7 @@ import { RecipeComponent } from './recipe/recipe.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-       {
-         path: '',
-         redirectTo: '/main',
-         pathMatch  : 'full'
-       },
-      {
-        path: 'main',
-        component: MainComponent,
-      },
-      {
-        path: 'detail/:id',
-        component: DishdayDetailComponent
-      },
-       {
-          path: 'recipe',
-          component: RecipeComponent
-       }
-    ])
+    AppRoutingModule,
   ],
   providers: [
     DishDayService

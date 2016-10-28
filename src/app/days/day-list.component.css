@@ -1,23 +1,17 @@
-.rotate {
-    -webkit-transform: rotate(-90deg);
-
-    -moz-transform: rotate(-90deg);
-
-    -ms-transform: rotate(-90deg);
-
-    -o-transform: rotate(-90deg);
-
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    position: relative;
-    left: 56px;
-    font-size: 15px;
-    top: 66px;
+.main-dish-text {
+    font-weight: bold;
+}
+.side-dish-text{
+    color: #898a8c;
+    font-size: smaller;
 }
 
-
-.vertical-text {
-	transform: rotate(90deg);
-	transform-origin: left top 0;
-    float: left;
-    padding-left: 11px;
+.day-text{
+    color: #03a9f4;
+    font-size: 10px !important;
 }
+
+.menu-list:hover{
+    background-color: lightgray;
+}
+  

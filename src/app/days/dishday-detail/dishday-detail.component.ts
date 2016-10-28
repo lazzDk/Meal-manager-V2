@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router'; 
+import { Location }                 from '@angular/common';
 
 import { DishDay } from '../../shared/dishday';
 import { DishDayService } from '../dishday.service';
@@ -14,15 +15,19 @@ import { DishDayService } from '../dishday.service';
 export class DishdayDetailComponent implements OnInit {
   dishDay: DishDay;
 
-  constructor(private activatedRoute: ActivatedRoute, private dishDayService: DishDayService) {
+  constructor(private activatedRoute: ActivatedRoute, private dishDayService: DishDayService, private location: Location) {
    }
 
   ngOnInit() {
     this.activatedRoute.params.forEach((params: Params) => {
-      let id = +params['id'];
+      let id = params['id'];
       this.dishDayService.getDishDay(id)
       .then(dishDay => this.dishDay = dishDay);
     })
   }
+
+  goBack() {
+    this.location.back();
+   }
 
 }
